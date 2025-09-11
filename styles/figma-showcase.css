@@ -1,0 +1,151 @@
+/**
+ * figma-showcase.css
+ * Figma 設計作品展示專用樣式
+ */
+
+/* 手機應用設計展示區 */
+.app-designs-showcase {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* 應用設計預覽卡片 */
+.app-designs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.app-design-preview {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--motion-duration-base) var(--motion-ease);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  padding-top: 200%; /* 高寬比約 2:1 模擬手機螢幕 */
+}
+
+.app-design-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-brand-lighter);
+}
+
+.app-design-preview.active {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px var(--color-brand-lighter);
+}
+
+.app-design-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.app-design-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-3);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+/* Figma 嵌入區域 */
+.figma-display-area {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+.figma-display-area-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.figma-display-area-title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+.figma-display-container {
+  position: relative;
+  flex-grow: 1;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.figma-embed-wrapper {
+  position: relative;
+  display: none;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.figma-embed-wrapper.active {
+  display: block;
+}
+
+.figma-embed {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+}
+
+/* 初始提示區域 */
+.select-design-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 450px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.select-design-prompt-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-4);
+  color: var(--color-brand-lighter);
+}
+
+.select-design-prompt.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-designs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .app-designs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

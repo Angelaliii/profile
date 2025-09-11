@@ -1,0 +1,52 @@
+/**
+ * social-cover.css
+ * 用於生成預覽圖片，實際專案中應替換為實際圖像
+ */
+
+.social-cover {
+  width: 1200px;
+  height: 630px;
+  background-color: var(--color-primary);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-light) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-light);
+  font-family: var(--font-primary);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.social-cover-title {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.social-cover-subtitle {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.social-cover-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+}
+
+.social-cover-decoration {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.2;
+}

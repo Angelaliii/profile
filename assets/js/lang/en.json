@@ -1,0 +1,106 @@
+{
+  "header": {
+    "skipLink": "Skip to main content",
+    "name": "Yi-Xian Li"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "title": "Building poetry between code and pixels.",
+      "subtitle": "A digital garden of a frontend engineer, planting thoughts and practices on technology, design, and life.",
+      "cta": "About Me"
+    },
+    "highlights": {
+      "frontend": {
+        "title": "Frontend Development",
+        "content": "Specialized in vanilla JavaScript and modern CSS, creating performant, maintainable, and accessible web applications. I believe good code is an art form in itself."
+      },
+      "design": {
+        "title": "Visual & Interactive Design",
+        "content": "From brand identity to microinteractions, I'm dedicated to creating meaningful and delightful user experiences. Design is not just aesthetics; it's problem-solving."
+      },
+      "content": {
+        "title": "Digital Content Creation",
+        "content": "Sharing technical insights and personal growth through text and visual media. I believe clear communication is the bridge connecting people and knowledge."
+      }
+    },
+    "recent": {
+      "title": "Recent Articles",
+      "subtitle": "Some recent thoughts and explorations. Feel free to discuss.",
+      "cta": "View All Articles"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "About Me",
+      "subtitle": "A thinker navigating between code and design."
+    },
+    "intro": {
+      "p1": "Hi, I'm Ying-Hsien Lee. I'm a frontend engineer and designer passionate about creating beautiful things in the digital world. For me, code is not just a pile of logic, but a brush to realize creativity and solve problems. I enjoy transforming an abstract idea into a tangible product through meticulous design and rigorous engineering.",
+      "p2": "My journey began with a love for visual arts, but soon I found that static images couldn't satisfy my craving for interaction. This led me into the world of web development. Here, I found the perfect intersection of technology and humanities: I can inject life into interfaces with JavaScript, depict delicate emotions with CSS, and build solid and inclusive structures with semantic HTML. I firmly believe that the best products are those that achieve a delicate balance between functionality, aesthetics, and usability.",
+      "p3": "On this blog, I document my learning, thoughts, and practices. It's both my personal knowledge base and my window to dialogue with the world. Whether you're a potential collaborator, a peer, or just a curious reader about the digital world, I welcome you to stay, explore, and exchange ideas."
+    },
+    "skills": {
+      "title": "My Skill Spectrum",
+      "p1": "I dislike defining skills with lengthy lists because technology is fluid, and real ability lies in integration and application. My core expertise revolves around 'creating high-quality Web frontend experiences.' This means I can skillfully use vanilla JavaScript (ES6+), CSS3, and HTML5 to construct complex interactive interfaces, with a strong emphasis on code maintainability and performance. I'm accustomed to pixel-perfect implementation of designs, adding just the right amount of dynamism through CSS animations and SVG.",
+      "p2": "On the design side, I'm familiar with the complete process from user research and wireframing to high-fidelity prototype design. I excel at establishing design systems to ensure brand visual consistency across different platforms. At the same time, I have a near-obsessive pursuit of accessibility design (A11Y) and Web performance optimization, because I believe digital products should serve everyone and respect their time."
+    },
+    "timeline": {
+      "title": "My Professional Journey",
+      "jobs": {
+        "job1": {
+          "period": "2025 - Present",
+          "title": "Senior Frontend Engineer",
+          "desc": "Leading a team to refactor enterprise-level applications, transforming legacy systems into modern micro-frontend architectures, enhancing development efficiency and user experience. Introducing emerging technologies like Web Components and CSS Container Queries."
+        },
+        "job2": {
+          "period": "2022 - 2025",
+          "title": "Frontend Developer",
+          "desc": "Responsible for developing and optimizing multiple high-traffic e-commerce websites, focusing on responsive design, performance optimization, and user interaction. Successfully improved website Lighthouse performance scores from 60 to 95+."
+        },
+        "job3": {
+          "period": "2020 - 2022",
+          "title": "UI/UX Designer",
+          "desc": "Transitioned from visual design to interactive design, focusing on user experience research and interactive prototype design. Participated in multiple cross-platform application designs, from concept ideation to high-fidelity design and user testing."
+        },
+        "job4": {
+          "period": "2018 - 2020",
+          "title": "Visual Designer",
+          "desc": "Focused on brand identity, website, and mobile application interface design. Established multiple brand visual systems, responsible for the complete design process from logo design to website and application interfaces."
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's Create Something Together?",
+      "content": "If you're looking for a collaborator who can balance technical depth with design quality, or if you're interested in my projects and would like to chat further, please feel free to contact me. I'd be very happy to hear your ideas.",
+      "button": "Send Email"
+    }
+  },
+  "blog": {
+    "header": {
+      "title": "Articles",
+      "subtitle": "Thoughts and practices planted in my digital garden."
+    },
+    "search": "Search article titles or summaries...",
+    "tags": {
+      "all": "All",
+      "design": "Design Thinking",
+      "frontend": "Frontend Development",
+      "digital": "Digital Life"
+    },
+    "no_results": "No articles found matching your criteria."
+  },
+  "footer": {
+    "contact": {
+      "title": "Stay Connected",
+      "content": "Have collaboration ideas or just want to chat? Feel free to reach me through the following ways.",
+      "email": "your-email@example.com"
+    },
+    "copyright": "© 2025 Ying-Hsien Lee's Digital Garden. All Rights Reserved.",
+    "back": "Back to Top"
+  }
+}

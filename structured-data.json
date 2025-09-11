@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://your-username.github.io/#person",
+      "name": "李映嫻",
+      "alternateName": "Lee Ying-Hsien",
+      "description": "專業前端工程師與網頁動畫設計師，專精於打造優雅且實用的數位體驗。",
+      "image": "https://your-username.github.io/assets/img/profile.jpg",
+      "jobTitle": "前端工程師 & 網頁動畫設計師",
+      "url": "https://your-username.github.io/",
+      "sameAs": [
+        "https://github.com/your-username",
+        "https://linkedin.com/in/your-username"
+      ],
+      "knowsLanguage": ["zh-TW", "en"],
+      "knowsAbout": [
+        "Web Development",
+        "Frontend Engineering",
+        "UI/UX Design",
+        "Animation",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://your-username.github.io/#website",
+      "url": "https://your-username.github.io/",
+      "name": "李映嫻 - 前端工程師 & 網頁動畫設計師",
+      "description": "專業前端工程師與網頁動畫設計師，專精於打造優雅且實用的數位體驗。探索我的技能、證照及工作經驗。",
+      "publisher": {
+        "@id": "https://your-username.github.io/#person"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://your-username.github.io/#webpage",
+      "url": "https://your-username.github.io/",
+      "name": "李映嫻 - 前端工程師 & 網頁動畫設計師",
+      "isPartOf": {
+        "@id": "https://your-username.github.io/#website"
+      },
+      "about": {
+        "@id": "https://your-username.github.io/#person"
+      },
+      "description": "專業前端工程師與網頁動畫設計師，專精於打造優雅且實用的數位體驗。探索我的技能、證照及工作經驗。",
+      "inLanguage": "zh-TW",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": ["https://your-username.github.io/"]
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://your-username.github.io/#certificateList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Course",
+            "name": "AWS 解決方案架構師專業認證",
+            "provider": {
+              "@type": "Organization",
+              "name": "Amazon Web Services"
+            },
+            "description": "專業級雲端架構認證",
+            "dateCreated": "2023-05"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Course",
+            "name": "Microsoft 認證：Azure 開發人員助理",
+            "provider": {
+              "@type": "Organization",
+              "name": "Microsoft"
+            },
+            "description": "雲端應用開發認證",
+            "dateCreated": "2022-11"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Course",
+            "name": "專業 Scrum 產品負責人 I (PSPO I)",
+            "provider": {
+              "@type": "Organization",
+              "name": "Scrum.org"
+            },
+            "description": "敏捷專案管理認證",
+            "dateCreated": "2022-03"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://your-username.github.io/#workExperienceList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WorkExperience",
+            "name": "資深全端開發工程師",
+            "description": "帶領開發團隊設計並實現可擴展的網站解決方案，為企業和新創公司提供支援。優化數據庫效能，減少查詢時間達40%。導入現代化前端框架，提升使用者體驗和開發效率。",
+            "startDate": "2021-06",
+            "endDate": "現在",
+            "employerName": "科技創新有限公司"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WorkExperience",
+            "name": "網站開發工程師",
+            "description": "開發多個高流量電子商務平台，實現複雜的付款流程和庫存管理系統。使用React和Node.js建立現代化網站應用。導入自動化測試流程，提高代碼質量和穩定性。",
+            "startDate": "2019-03",
+            "endDate": "2021-05",
+            "employerName": "數位方案股份有限公司"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WorkExperience",
+            "name": "前端開發實習生",
+            "description": "協助開發響應式網站界面和互動元件。學習並應用最佳前端實踐，包括效能優化和跨瀏覽器相容性。參與設計討論並提供UI/UX改進建議。",
+            "startDate": "2018-07",
+            "endDate": "2019-02",
+            "employerName": "網路新創公司"
+          }
+        }
+      ]
+    }
+  ]
+}

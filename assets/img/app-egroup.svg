@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="360" viewBox="0 0 180 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="360" fill="#EEEEEE"/>
+  <rect x="15" y="40" width="150" height="280" rx="10" fill="white" stroke="#CCCCCC"/>
+  <text x="90" y="180" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">eGroup APP</text>
+  <rect x="75" y="290" width="30" height="8" rx="4" fill="#DDDDDD"/>
+</svg>

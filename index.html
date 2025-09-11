@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>李映嫻｜前端開發 & 網頁動畫</title>
+    <meta
+      name="description"
+      content="李映嫻｜輔仁大學資管系學生，前端開發與網頁動畫，作品涵蓋電商、租借系統與校務網站。"
+    />
+    <link rel="canonical" href="https://angelaliii.github.io/" />
+
+    <!-- SEO & Social Sharing -->
+    <meta property="og:title" content="李映嫻｜前端開發 & 網頁動畫" />
+    <meta
+      property="og:description"
+      content="前端工程與網頁動畫，作品涵蓋電商、租借系統與校務網站。查看證照、經歷與作品展示。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://angelaliii.github.io/" />
+    <meta
+      property="og:image"
+      content="https://angelaliii.github.io/assets/img/social-cover.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="李映嫻｜前端開發 & 網頁動畫" />
+    <meta
+      name="twitter:description"
+      content="前端工程與網頁動畫，作品涵蓋電商、租借系統與校務網站。查看證照、經歷與作品展示。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://angelaliii.github.io/assets/img/social-cover.webp"
+    />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="./assets/img/logo-big.png" />
+    <link rel="apple-touch-icon" href="./assets/img/logo-big.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/utilities.css" />
+    <link rel="stylesheet" href="./styles/layouts.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="stylesheet" href="./styles/figma-showcase.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "李映嫻",
+        "url": "https://angelaliii.github.io/",
+        "sameAs": [
+          "https://github.com/Angelaliii",
+          "https://www.linkedin.com/in/angeliii"
+        ],
+        "jobTitle": "前端開發 / 網頁動畫",
+        "image": "https://angelaliii.github.io/assets/img/profile.webp",
+        "description": "輔仁大學資管系學生，專注前端工程、互動動畫與使用者體驗。"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://angelaliii.github.io/",
+        "name": "李映嫻 個人網站",
+        "description": "展示技能、證照、經歷與作品集。"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header" id="header">
+      <div class="container header-container">
+        <div class="site-logo-container">
+          <img
+            src="./assets/img/logo-mini.png"
+            alt="LIYH 個人識別"
+            class="site-logo-img"
+            width="40"
+            height="40"
+            loading="eager"
+          />
+          <a href="#hero" class="site-logo" aria-label="回到首頁">李映嫻</a>
+        </div>
+        <nav class="main-nav" aria-label="主選單">
+          <ul>
+            <li><a href="#hero" id="nav-home">首頁</a></li>
+            <li><a href="#about" id="nav-about">關於我</a></li>
+            <li><a href="#skills" id="nav-skills">技能/證照</a></li>
+            <li><a href="#projects" id="nav-projects">作品集</a></li>
+            <li><a href="#experience" id="nav-experience">經歷</a></li>
+            <li><a href="#contact" id="nav-contact">聯繫</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero -->
+      <section id="hero" class="hero" aria-label="個人首屏">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h1 class="fade-in">李映嫻</h1>
+            <p class="tagline fade-in" style="animation-delay: 80ms">
+              輔仁大學資訊管理學系｜程式 & 設計
+            </p>
+            <div class="cta-group fade-in" style="animation-delay: 160ms">
+              <a href="#projects" class="cta-button primary">看作品</a>
+              <a href="#contact" class="cta-button secondary">聯繫我</a>
+            </div>
+          </div>
+          <div class="hero-visual fade-in" style="animation-delay: 120ms">
+            <div class="hero-bg" aria-hidden="true">
+              <img
+                src="./assets/img/hero-bg.svg"
+                alt=""
+                class="hero-bg-element"
+                width="500"
+                height="500"
+                loading="eager"
+              />
+            </div>
+            <div class="profile-image">
+              <img
+                src="./assets/img/YS-00638.JPG"
+                alt="李映嫻的個人照片"
+                width="280"
+                height="280"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+        <svg
+          class="wave-divider"
+          xmlns="D:\Users\User\Desktop\profile\assets\icons\wave.svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          ></path>
+        </svg>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about section-padding">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">關於我</h2>
+          <div class="about-content">
+            <div class="about-text reveal-on-scroll" data-delay="100">
+              <p>
+                嗨，我是李映嫻。專注於前端工程與互動動畫，喜歡把設計轉譯成
+                直覺、流暢又有溫度的網頁體驗。
+              </p>
+              <p>
+                近期關注：校務系統的預約與租借流程、電商前台體驗、ESLint 與
+                前端可維護性。
+              </p>
+            </div>
+            <div class="about-stats reveal-on-scroll" data-delay="200">
+              <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">個實作作品</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">張證照/結訓</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label">校內服務年</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Certifications -->
+      <section id="skills" class="skills section-padding">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">技能與證照</h2>
+
+          <h3 class="subsection-title reveal-on-scroll">技術能力</h3>
+          <div class="skills-grid reveal-on-scroll">
+            <div class="skill-card" data-delay="80">
+              <div class="skill-icon">
+                <svg aria-hidden="true" class="icon">
+                  <use href="./assets/icons/icons.svg#code-front"></use>
+                </svg>
+              </div>
+              <h4 class="skill-title">前端開發</h4>
+              <div class="skill-level" aria-label="熟悉度：高">
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot"></span>
+              </div>
+              <p class="skill-desc">
+                HTML, CSS, JavaScript/TypeScript, React, Git
+              </p>
+            </div>
+            <div class="skill-card" data-delay="120">
+              <div class="skill-icon">
+                <svg aria-hidden="true" class="icon">
+                  <use href="./assets/icons/icons.svg#animation"></use>
+                </svg>
+              </div>
+              <h4 class="skill-title">網頁動畫</h4>
+              <div class="skill-level" aria-label="熟悉度：高">
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot"></span>
+              </div>
+              <p class="skill-desc">CSS/SVG 動畫、GSAP、動效節奏與效能</p>
+            </div>
+            <div class="skill-card" data-delay="160">
+              <div class="skill-icon">
+                <svg aria-hidden="true" class="icon">
+                  <use href="./assets/icons/icons.svg#ux"></use>
+                </svg>
+              </div>
+              <h4 class="skill-title">UI/UX 與流程</h4>
+              <div class="skill-level" aria-label="熟悉度：中高">
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot"></span>
+                <span class="skill-level-dot"></span>
+              </div>
+              <p class="skill-desc">Figma 原型、設計系統、可用性測試</p>
+            </div>
+            <div class="skill-card" data-delay="200">
+              <div class="skill-icon">
+                <svg aria-hidden="true" class="icon">
+                  <use href="./assets/icons/icons.svg#performance"></use>
+                </svg>
+              </div>
+              <h4 class="skill-title">可維護性與品質</h4>
+              <div class="skill-level" aria-label="熟悉度：中高">
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot active"></span>
+                <span class="skill-level-dot"></span>
+                <span class="skill-level-dot"></span>
+              </div>
+              <p class="skill-desc">ESLint、程式碼規範、基本測試與文件</p>
+            </div>
+          </div>
+
+          <h3 class="subsection-title reveal-on-scroll">專業證照</h3>
+          <div class="certifications-grid reveal-on-scroll">
+            <!-- Google Cybersecurity -->
+            <div class="cert-card" data-delay="80" data-cert-id="google-cyber">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/Google Cybersecurity.png"
+                  alt="Google Cybersecurity Certificate"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  Google Cybersecurity Professional Certificate
+                </h4>
+                <p class="cert-issuer">Google / Coursera</p>
+                <p class="cert-date">
+                  <time datetime="2024-06-28">2024-06-28</time>
+                </p>
+                <div class="cert-view-more">
+                  查看更多 <span class="cert-view-more-icon">▼</span>
+                </div>
+                <div class="cert-details">
+                  <h5>完成的課程模組：</h5>
+                  <ul>
+                    <li>Foundations of Cybersecurity</li>
+                    <li>Play It Safe: Manage Security Risks</li>
+                    <li>Connect and Protect: Networks and Network Security</li>
+                    <li>Tools of the Trade: Linux and SQL</li>
+                    <li>Assets, Threats, and Vulnerabilities</li>
+                    <li>Sound the Alarm: Detection and Response</li>
+                    <li>Automate Cybersecurity Tasks with Python</li>
+                    <li>Put It to Work: Prepare for Cybersecurity Jobs</li>
+                  </ul>
+                  <p>
+                    透過這個專業證照，我學習了資安基礎知識、風險管理、網路安全與進階技能，能夠識別威脅並執行適當的安全措施。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- AI-900 -->
+            <div class="cert-card" data-delay="120" data-cert-id="ai-900">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/certification-past-exam.svg"
+                  alt="Microsoft Azure AI Fundamentals"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  Microsoft Certified: Azure AI Fundamentals (AI-900)
+                </h4>
+                <p class="cert-issuer">Microsoft</p>
+                <p class="cert-date">
+                  <time datetime="2025-06-17">2025-06-17</time>
+                </p>
+                <div class="cert-view-more">
+                  查看更多 <span class="cert-view-more-icon">▼</span>
+                </div>
+                <div class="cert-details">
+                  <p>
+                    Microsoft Azure AI Fundamentals
+                    證照展示了我對人工智慧基本概念與 Azure 雲端 AI
+                    服務的理解。這包含機器學習、電腦視覺、自然語言處理和對話式
+                    AI 等技術的知識。
+                  </p>
+                  <h5>考試範圍：</h5>
+                  <ul>
+                    <li>描述人工智慧工作負載與考量事項 (15-20%)</li>
+                    <li>描述機器學習基本概念 (30-35%)</li>
+                    <li>描述電腦視覺工作負載與考量事項 (15-20%)</li>
+                    <li>描述自然語言處理工作負載與考量事項 (15-20%)</li>
+                    <li>描述對話式 AI 工作負載與考量事項 (15-20%)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- MTA Python -->
+            <div class="cert-card" data-delay="160" data-cert-id="mta-python">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/MTA.png"
+                  alt="MTA Python Certificate"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  MTA: Introduction to Programming Using Python
+                </h4>
+                <p class="cert-issuer">Microsoft</p>
+                <p class="cert-date">
+                  <time datetime="2022-02-09">2022-02-09</time>
+                </p>
+                <div class="cert-view-more">
+                  查看更多 <span class="cert-view-more-icon">▼</span>
+                </div>
+                <div class="cert-details">
+                  <p>
+                    Microsoft Technology Associate (MTA) Python 證照驗證了我的
+                    Python
+                    程式設計基本技能，包含語法、資料類型、函數與物件導向程式設計概念。
+                  </p>
+                  <h5>技能測評範圍：</h5>
+                  <ul>
+                    <li>Python 基礎語法與資料結構</li>
+                    <li>函數與模組設計</li>
+                    <li>錯誤處理與除錯技巧</li>
+                    <li>物件導向程式設計概念</li>
+                    <li>檔案操作與基本 I/O</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- App Inventor -->
+            <div class="cert-card" data-delay="200" data-cert-id="app-inventor">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/certification-past-exam.svg"
+                  alt="App Inventor Certificate"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  Developing Android Apps with App Inventor（課程完成）
+                </h4>
+                <p class="cert-issuer">Course Certificate</p>
+                <p class="cert-date">
+                  <time datetime="2023-11-26">2023-11-26</time>
+                </p>
+                <div class="cert-view-more">
+                  查看更多 <span class="cert-view-more-icon">▼</span>
+                </div>
+                <div class="cert-details">
+                  <p>
+                    完成了 MIT App Inventor
+                    課程，學習了如何使用視覺化拖曳方式開發 Android 應用程式。
+                  </p>
+                  <h5>課程內容：</h5>
+                  <ul>
+                    <li>使用者介面設計與互動元件</li>
+                    <li>事件處理與程式邏輯</li>
+                    <li>資料儲存與管理</li>
+                    <li>裝置感應器與媒體功能整合</li>
+                  </ul>
+                  <p>
+                    課程期間開發了多個實用型應用程式，包括待辦事項清單、計算器與簡易遊戲。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- AIF-c01 -->
+            <div class="cert-card" data-delay="240" data-cert-id="aws-ai">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/AIF-c01.png"
+                  alt="AWS Certified AI Practitioner"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  AWS Certified AI Practitioner (AIF-C01)
+                </h4>
+                <p class="cert-issuer">Amazon Web Services</p>
+                <p class="cert-date">
+                  <time datetime="2025-09-08">2025-09-08</time>
+                </p>
+                <div class="cert-view-more">
+                  查看更多 <span class="cert-view-more-icon">▼</span>
+                </div>
+                <div class="cert-details">
+                  <p>
+                    AWS AI 從業人員認證驗證了我在 AWS 雲端上設計、開發與實作 AI
+                    解決方案的能力。
+                  </p>
+                  <h5>考試範圍：</h5>
+                  <ul>
+                    <li>AI/ML 基礎知識與 AWS 服務 (30%)</li>
+                    <li>資料工程與準備 (20%)</li>
+                    <li>模型工程與部署 (26%)</li>
+                    <li>模型監控與操作 (24%)</li>
+                  </ul>
+                  <p>
+                    此證照展示了我使用 Amazon SageMaker、Amazon
+                    Rekognition、Amazon Comprehend 等 AWS AI 服務的專業知識。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <svg
+          class="wave-divider"
+          xmlns="D:\Users\User\Desktop\profile\assets\icons\wave.svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          ></path>
+        </svg>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="projects section-padding">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">作品集</h2>
+
+          <!-- 特色作品 -->
+          <div class="featured-project reveal-on-scroll">
+            <div class="featured-project-content">
+              <h3 class="featured-project-title">小團子飯糰販售（電商前台）</h3>
+              <p class="featured-project-meta">2025-05｜個人前端成果展示</p>
+              <p class="featured-project-desc">
+                電子商務作業，含商品清單、購物流程與互動動畫。設計風格融合現代簡約與傳統飯糰店風味，支援響應式設計，並包含購物車功能與結帳流程。部署在
+                GitHub Pages。
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">響應式設計</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://angelaliii.github.io/fantuan-storefront/"
+                  target="_blank"
+                  rel="noopener"
+                  class="cta-button primary"
+                  >前往網站</a
+                >
+                <a
+                  href="https://github.com/Angelaliii/fantuan-storefront"
+                  target="_blank"
+                  rel="noopener"
+                  class="cta-button secondary"
+                  >查看原始碼</a
+                >
+              </div>
+            </div>
+            <div class="featured-project-image">
+              <img
+                src="./assets/img/rice.png"
+                alt="小團子飯糰網站截圖"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- 一般作品 -->
+          <div class="projects-grid reveal-on-scroll">
+            <!-- 器材租借網站 -->
+            <article class="project-card" data-delay="80">
+              <div class="project-image-container">
+                <img
+                  src="./assets/img/貴重儀器/image.png"
+                  alt="器材租借網站截圖"
+                  class="project-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <header class="project-header">
+                  <h3 class="project-title">器材租借網站</h3>
+                  <p class="project-meta">2024-02 ~ 2024-06｜小組前端作業</p>
+                </header>
+                <p class="project-desc">
+                  支援器材瀏覽、租借申請與狀態查詢，整合管理系統與用戶介面。
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">React</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">API整合</span>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="cta-button tertiary" aria-disabled="true"
+                    >設計中</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- 教室租借網站 -->
+            <article class="project-card" data-delay="120">
+              <div class="project-image-container">
+                <img
+                  src="./assets/img/rent_classroom.png"
+                  alt="輔大外教中心教室租借網站截圖"
+                  class="project-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <header class="project-header">
+                  <h3 class="project-title">輔大外教中心教室租借網站</h3>
+                  <p class="project-meta">2025-05 ~ 至今｜全端網頁設計</p>
+                </header>
+                <p class="project-desc">
+                  教室租借系統，含預約、審核、日曆檢視與權限管理功能。
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Vue.js</span>
+                  <span class="project-tag">Express</span>
+                  <span class="project-tag">MongoDB</span>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="cta-button tertiary" aria-disabled="true"
+                    >開發中</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- 社團企業媒合系統 -->
+            <article class="project-card" data-delay="160">
+              <div class="project-image-container">
+                <img
+                  src="./assets/img/entriprice.png"
+                  alt="社團企業媒合系統截圖"
+                  class="project-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <header class="project-header">
+                  <h3 class="project-title">社團企業媒合系統</h3>
+                  <p class="project-meta">2025-02 ~ 2025-06｜班級小組作業</p>
+                </header>
+                <p class="project-desc">
+                  媒合社團與企業需求的資料填報、查詢與管理系統，提升媒合效率。
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">PHP</span>
+                  <span class="project-tag">MySQL</span>
+                  <span class="project-tag">Bootstrap</span>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="cta-button tertiary" aria-disabled="true"
+                    >設計階段</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="subsection-title reveal-on-scroll">APP 設計作品</h3>
+          <div class="app-designs-showcase reveal-on-scroll">
+            <!-- 並排的APP預覽縮圖 -->
+            <div class="app-designs-grid">
+              <!-- eGroup APP 設計 -->
+              <div
+                class="app-design-preview"
+                data-target="egroup-app"
+                data-delay="80"
+              >
+                <img
+                  src="./assets/img/app-egroup.svg"
+                  alt="eGroup APP界面預覽"
+                  class="app-design-thumbnail"
+                  loading="lazy"
+                />
+                <div class="app-design-label">eGroup APP</div>
+              </div>
+
+              <!-- 心理健康平台 APP 設計 -->
+              <div
+                class="app-design-preview"
+                data-target="mental-health-app"
+                data-delay="120"
+              >
+                <img
+                  src="./assets/img/app-mental.svg"
+                  alt="心理健康平台預覽"
+                  class="app-design-thumbnail"
+                  loading="lazy"
+                />
+                <div class="app-design-label">心理健康平台</div>
+              </div>
+            </div>
+
+            <!-- Figma 嵌入顯示區域 -->
+            <div class="figma-display-area">
+              <div class="figma-display-area-header">
+                <h4 class="figma-display-area-title">互動設計作品</h4>
+              </div>
+
+              <div class="figma-display-container">
+                <!-- 初始提示 -->
+                <div class="select-design-prompt" id="select-design-prompt">
+                  <div class="select-design-prompt-icon">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      width="48"
+                      height="48"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        d="M2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm2 0c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8-8 3.58-8 8z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p>請從上方選擇一個設計作品來查看互動原型</p>
+                </div>
+
+                <!-- eGroup APP Figma 嵌入 -->
+                <div class="figma-embed-wrapper" id="egroup-app">
+                  <div class="figma-embed">
+                    <!-- 點擊時才載入內容 -->
+                    <div
+                      class="figma-placeholder"
+                      data-figma-url="https://www.figma.com/proto/Jt8JCRsvvMkw40VzwSJoW0/eGroup?node-id=1-967&t=gF54xYBcrNVYtapR-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A1291"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- 心理健康平台 Figma 嵌入 -->
+                <div class="figma-embed-wrapper" id="mental-health-app">
+                  <div class="figma-embed">
+                    <!-- 點擊時才載入內容 -->
+                    <div
+                      class="figma-placeholder"
+                      data-figma-url="https://www.figma.com/proto/faDYubRc5UgHktvRdJtykn/%E5%AB%BB%E5%AB%BB?node-id=794-3368&p=f&t=t2LdAOPINCp9odb8-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=794%3A3409"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="experience section-padding">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">個人經歷</h2>
+          <div class="timeline reveal-on-scroll">
+            <ol class="timeline-list">
+              <!-- 輔仁大學學生會 秘書處長 -->
+              <li class="timeline-item" data-delay="80">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <time datetime="2024-09" class="timeline-date"
+                    >2024-09 ~ 2025-06</time
+                  >
+                  <h3 class="timeline-title">輔仁大學學生會 秘書處長</h3>
+                  <p class="timeline-desc">
+                    雲端資料整理、製作獎狀/參與證明、招募流程（表單、面試通知與結果）、
+                    會議紀錄、期初期末聚會籌辦、通訊錄管理與公文寄發。
+                  </p>
+                </div>
+              </li>
+              <!-- 輔仁大學學生會 秘書處部員 -->
+              <li class="timeline-item" data-delay="120">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <time datetime="2023-09" class="timeline-date"
+                    >2023-09 ~ 2024-06</time
+                  >
+                  <h3 class="timeline-title">輔仁大學學生會 秘書處部員</h3>
+                  <p class="timeline-desc">
+                    學校信件領取、學生議會列席、期初/期末聚會協辦。
+                  </p>
+                </div>
+              </li>
+              <!-- IDEA 國際菁英學生會 -->
+              <li class="timeline-item" data-delay="160">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <time datetime="2023-09" class="timeline-date"
+                    >2023-09 ~ 至今</time
+                  >
+                  <h3 class="timeline-title">IDEA 國際菁英學生會 成員</h3>
+                  <p class="timeline-desc">
+                    陪伴外籍生出遊、介紹台灣美食與文化、料理交流。
+                  </p>
+                </div>
+              </li>
+              <!-- 外教中心 教室租借網站 -->
+              <li class="timeline-item" data-delay="200">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <time datetime="2025-05" class="timeline-date"
+                    >2025-05 ~ 至今</time
+                  >
+                  <h3 class="timeline-title">
+                    輔大外教中心 教室租借網站｜全端
+                  </h3>
+                  <p class="timeline-desc">
+                    教室租借系統開發：預約、審核、日曆檢視與權限管理。
+                  </p>
+                </div>
+              </li>
+              <!-- 益群健康 實習生 -->
+              <li class="timeline-item" data-delay="240">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <time class="timeline-date">（期間：實習）</time>
+                  <h3 class="timeline-title">
+                    益群健康股份有限公司 科技部實習生
+                  </h3>
+                  <p class="timeline-desc">
+                    專案 QC 與英文回報、流程文件撰寫、ESLint
+                    建置與衍生錯誤修正、用戶回饋統整。
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact section-padding">
+        <div class="container">
+          <h2 class="section-title reveal-on-scroll">聯繫我</h2>
+          <div class="contact-content reveal-on-scroll">
+            <div class="contact-info" data-delay="80">
+              <p class="contact-text">歡迎來信或至社群聯繫：</p>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <svg aria-hidden="true" class="icon">
+                    <use href="./assets/icons/envelope-solid-full.svg"></use>
+                  </svg>
+                  <a href="mailto:angela20151210@gmail.com" class="contact-link"
+                    >angela20151210@gmail.com</a
+                  >
+                </li>
+                <li class="contact-item">
+                  <svg aria-hidden="true" class="icon">
+                    <use href="./assets/icons/linkedin-brands.svg"></use>
+                  </svg>
+                  <a
+                    href="https://www.linkedin.com/in/angeliii"
+                    class="contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li class="contact-item">
+                  <svg aria-hidden="true" class="icon">
+                    <use
+                      href="./assets/icons/github-brands-solid-full.svg"
+                    ></use>
+                  </svg>
+                  <a
+                    href="https://github.com/Angelaliii"
+                    class="contact-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- 如果未配置表單服務，提供 mailto 後援 -->
+            <div class="contact-form-container" data-delay="160">
+              <form
+                id="contact-form"
+                class="contact-form"
+                aria-describedby="form-note"
+              >
+                <p id="form-note" class="form-note">
+                  若無法送出，請直接來信至
+                  <a href="mailto:angela20151210@gmail.com"
+                    >angela20151210@gmail.com</a
+                  >
+                </p>
+                <div class="form-group">
+                  <label for="name">姓名</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="請輸入您的姓名"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">電子郵件</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="請輸入您的電子郵件"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">訊息</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    placeholder="請輸入您的訊息"
+                  ></textarea>
+                </div>
+                <div class="form-submit">
+                  <button type="submit" class="cta-button primary">
+                    發送訊息
+                  </button>
+                </div>
+                <div class="form-feedback" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img
+              src="./assets/img/logo-mini.png"
+              alt="LIYH 個人識別"
+              class="footer-logo-img"
+              width="40"
+              height="40"
+              loading="lazy"
+            />
+            <span class="footer-logo-text">李映嫻</span>
+          </div>
+          <div class="footer-social">
+            <a
+              href="https://github.com/Angelaliii"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub 個人檔案"
+              class="social-link"
+            >
+              <img
+                src="./assets/icons/github-brands-solid-full.svg"
+                alt="GitHub"
+                class="icon"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/angeliii"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn 個人檔案"
+              class="social-link"
+            >
+              <img
+                src="./assets/icons/linkedin-brands.svg"
+                alt="LinkedIn"
+                class="icon"
+              />
+            </a>
+            <a
+              href="mailto:angela20151210@gmail.com"
+              aria-label="發送郵件"
+              class="social-link"
+            >
+              <img
+                src="./assets/icons/envelope-solid-full.svg"
+                alt="Email"
+                class="icon"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">© 2025 李映嫻．最後更新：2025-09</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="返回頂部">
+      <svg aria-hidden="true" class="icon">
+        <use href="./assets/icons/arrow-up-solid-full.svg"></use>
+      </svg>
+    </button>
+
+    <!-- 核心腳本 -->
+    <script src="./scripts/utils.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/animations.js" defer></script>
+    <script src="./scripts/language.js" defer></script>
+
+    <!-- 功能腳本 -->
+    <script src="./scripts/figma-showcase.js" defer></script>
+    <script src="./scripts/certificates.js" defer></script>
+  </body>
+</html>

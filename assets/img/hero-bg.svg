@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="250" cy="250" r="240" stroke="#BECEE4" stroke-width="2" stroke-dasharray="8 8" opacity="0.5"/>
+  <circle cx="250" cy="250" r="180" stroke="#BECEE4" stroke-width="2" stroke-dasharray="6 6" opacity="0.3"/>
+  <circle cx="250" cy="250" r="120" fill="#BECEE4" fill-opacity="0.1"/>
+</svg>
