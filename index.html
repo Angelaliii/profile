@@ -167,8 +167,8 @@
           <h2 class="section-title reveal-on-scroll">關於我</h2>
           <div class="about-content">
             <div class="about-text reveal-on-scroll" data-delay="100">
+              <p>大家好，我的名字是李映嫻</p>
               <p>
-                大家好，我的名字是李映嫻
                 我覺得自己是一個喜歡挑戰新事物的人，不管是學習新技能，還是試著用不同角度解決問題。對我來說，挫折只是過程中的小插曲，真正重要的是找到解決辦法，然後繼續向前。
                 未來，我希望能結合興趣與專業，運用所學，做出有趣又有價值的東西，讓生活更有效率，也讓自己過得精彩！
               </p>
@@ -176,7 +176,7 @@
             </div>
             <div class="about-stats reveal-on-scroll" data-delay="200">
               <div class="stat-item">
-                <span class="stat-number">4</span>
+                <span class="stat-number">6</span>
                 <span class="stat-label">個實作作品</span>
               </div>
               <div class="stat-item">
@@ -248,6 +248,133 @@
 
           <h3 class="subsection-title reveal-on-scroll">專業證照</h3>
           <div class="certifications-grid reveal-on-scroll">
+            <!-- MTA Python -->
+            <div class="cert-card" data-delay="160" data-cert-id="mta-python">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/MTA.png"
+                  alt="MTA Python Certificate"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  MTA: Introduction to Programming Using Python
+                </h4>
+                <p class="cert-issuer">Microsoft</p>
+                <p class="cert-date">
+                  <time datetime="2022-02-09">2022-02-09</time>
+                </p>
+                <button class="cert-view-more" aria-label="查看詳細資訊">
+                  查看詳細 <span class="cert-view-more-icon">+</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- MTA Python 彈出視窗 -->
+            <div id="modal-mta-python" class="modal cert-modal">
+              <div class="modal-content">
+                <button class="modal-close" aria-label="關閉">&times;</button>
+                <div class="modal-header">
+                  <div class="cert-modal-badge">
+                    <img
+                      src="./assets/img/Certificate/MTA.png"
+                      alt="MTA Python Certificate"
+                      class="cert-badge-img"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="modal-title">
+                      MTA: Introduction to Programming Using Python
+                    </h4>
+                    <p class="cert-issuer">Microsoft</p>
+                    <p class="cert-date">
+                      <time datetime="2022-02-09">2022-02-09</time>
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-body cert-modal-details">
+                  <p>
+                    Microsoft Technology Associate (MTA) Python 證照驗證了我的
+                    Python
+                    程式設計基本技能，包含語法、資料類型、函數與物件導向程式設計概念。
+                  </p>
+                  <h5>技能測評範圍：</h5>
+                  <ul>
+                    <li>Python 基礎語法與資料結構</li>
+                    <li>函數與模組設計</li>
+                    <li>錯誤處理與除錯技巧</li>
+                    <li>物件導向程式設計概念</li>
+                    <li>檔案操作與基本 I/O</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- App Inventor -->
+            <div class="cert-card" data-delay="200" data-cert-id="app-inventor">
+              <div class="cert-badge">
+                <img
+                  src="./assets/img/Certificate/app inventor.png"
+                  alt="App Inventor Certificate"
+                  class="cert-badge-img"
+                />
+              </div>
+              <div class="cert-content">
+                <h4 class="cert-title">
+                  Developing Android Apps with App Inventor（課程完成）
+                </h4>
+                <p class="cert-issuer">Course Certificate</p>
+                <p class="cert-date">
+                  <time datetime="2023-11-26">2023-11-26</time>
+                </p>
+                <button class="cert-view-more" aria-label="查看詳細資訊">
+                  查看詳細 <span class="cert-view-more-icon">+</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- App Inventor 彈出視窗 -->
+            <div id="modal-app-inventor" class="modal cert-modal">
+              <div class="modal-content">
+                <button class="modal-close" aria-label="關閉">&times;</button>
+                <div class="modal-header">
+                  <div class="cert-modal-badge">
+                    <img
+                      src="./assets/img/Certificate/certification-past-exam.svg"
+                      alt="App Inventor Certificate"
+                      class="cert-badge-img"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="modal-title">
+                      Developing Android Apps with App Inventor（課程完成）
+                    </h4>
+                    <p class="cert-issuer">Course Certificate</p>
+                    <p class="cert-date">
+                      <time datetime="2023-11-26">2023-11-26</time>
+                    </p>
+                  </div>
+                </div>
+                <div class="modal-body cert-modal-details">
+                  <p>
+                    完成了 MIT App Inventor
+                    課程，學習了如何使用視覺化拖曳方式開發 Android 應用程式。
+                  </p>
+                  <h5>課程內容：</h5>
+                  <ul>
+                    <li>使用者介面設計與互動元件</li>
+                    <li>事件處理與程式邏輯</li>
+                    <li>資料儲存與管理</li>
+                    <li>裝置感應器與媒體功能整合</li>
+                  </ul>
+                  <p>
+                    課程期間開發了多個實用型應用程式，包括待辦事項清單、計算器與簡易遊戲。
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <!-- Google Cybersecurity -->
             <div class="cert-card" data-delay="80" data-cert-id="google-cyber">
               <div class="cert-badge">
@@ -374,131 +501,7 @@
                 </div>
               </div>
             </div>
-            <!-- MTA Python -->
-            <div class="cert-card" data-delay="160" data-cert-id="mta-python">
-              <div class="cert-badge">
-                <img
-                  src="./assets/img/Certificate/MTA.png"
-                  alt="MTA Python Certificate"
-                  class="cert-badge-img"
-                />
-              </div>
-              <div class="cert-content">
-                <h4 class="cert-title">
-                  MTA: Introduction to Programming Using Python
-                </h4>
-                <p class="cert-issuer">Microsoft</p>
-                <p class="cert-date">
-                  <time datetime="2022-02-09">2022-02-09</time>
-                </p>
-                <button class="cert-view-more" aria-label="查看詳細資訊">
-                  查看詳細 <span class="cert-view-more-icon">+</span>
-                </button>
-              </div>
-            </div>
 
-            <!-- MTA Python 彈出視窗 -->
-            <div id="modal-mta-python" class="modal cert-modal">
-              <div class="modal-content">
-                <button class="modal-close" aria-label="關閉">&times;</button>
-                <div class="modal-header">
-                  <div class="cert-modal-badge">
-                    <img
-                      src="./assets/img/Certificate/MTA.png"
-                      alt="MTA Python Certificate"
-                      class="cert-badge-img"
-                    />
-                  </div>
-                  <div>
-                    <h4 class="modal-title">
-                      MTA: Introduction to Programming Using Python
-                    </h4>
-                    <p class="cert-issuer">Microsoft</p>
-                    <p class="cert-date">
-                      <time datetime="2022-02-09">2022-02-09</time>
-                    </p>
-                  </div>
-                </div>
-                <div class="modal-body cert-modal-details">
-                  <p>
-                    Microsoft Technology Associate (MTA) Python 證照驗證了我的
-                    Python
-                    程式設計基本技能，包含語法、資料類型、函數與物件導向程式設計概念。
-                  </p>
-                  <h5>技能測評範圍：</h5>
-                  <ul>
-                    <li>Python 基礎語法與資料結構</li>
-                    <li>函數與模組設計</li>
-                    <li>錯誤處理與除錯技巧</li>
-                    <li>物件導向程式設計概念</li>
-                    <li>檔案操作與基本 I/O</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- App Inventor -->
-            <div class="cert-card" data-delay="200" data-cert-id="app-inventor">
-              <div class="cert-badge">
-                <img
-                  src="./assets/img/Certificate/certification-past-exam.svg"
-                  alt="App Inventor Certificate"
-                  class="cert-badge-img"
-                />
-              </div>
-              <div class="cert-content">
-                <h4 class="cert-title">
-                  Developing Android Apps with App Inventor（課程完成）
-                </h4>
-                <p class="cert-issuer">Course Certificate</p>
-                <p class="cert-date">
-                  <time datetime="2023-11-26">2023-11-26</time>
-                </p>
-                <button class="cert-view-more" aria-label="查看詳細資訊">
-                  查看詳細 <span class="cert-view-more-icon">+</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- App Inventor 彈出視窗 -->
-            <div id="modal-app-inventor" class="modal cert-modal">
-              <div class="modal-content">
-                <button class="modal-close" aria-label="關閉">&times;</button>
-                <div class="modal-header">
-                  <div class="cert-modal-badge">
-                    <img
-                      src="./assets/img/Certificate/certification-past-exam.svg"
-                      alt="App Inventor Certificate"
-                      class="cert-badge-img"
-                    />
-                  </div>
-                  <div>
-                    <h4 class="modal-title">
-                      Developing Android Apps with App Inventor（課程完成）
-                    </h4>
-                    <p class="cert-issuer">Course Certificate</p>
-                    <p class="cert-date">
-                      <time datetime="2023-11-26">2023-11-26</time>
-                    </p>
-                  </div>
-                </div>
-                <div class="modal-body cert-modal-details">
-                  <p>
-                    完成了 MIT App Inventor
-                    課程，學習了如何使用視覺化拖曳方式開發 Android 應用程式。
-                  </p>
-                  <h5>課程內容：</h5>
-                  <ul>
-                    <li>使用者介面設計與互動元件</li>
-                    <li>事件處理與程式邏輯</li>
-                    <li>資料儲存與管理</li>
-                    <li>裝置感應器與媒體功能整合</li>
-                  </ul>
-                  <p>
-                    課程期間開發了多個實用型應用程式，包括待辦事項清單、計算器與簡易遊戲。
-                  </p>
-                </div>
-              </div>
-            </div>
             <!-- AIF-c01 -->
             <div class="cert-card" data-delay="240" data-cert-id="aws-ai">
               <div class="cert-badge">
@@ -563,13 +566,11 @@
                 </div>
               </div>
             </div>
-
-            <!-- 移除局部遮罩，使用全域遮罩 -->
           </div>
         </div>
         <svg
           class="wave-divider"
-          xmlns="D:\Users\User\Desktop\profile\assets\icons\wave.svg"
+          xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -666,7 +667,7 @@
             </article>
 
             <!-- 社團企業媒合系統 -->
-            <article class="project-card" data-delay="160">
+            <article class="project-card" data-delay="120">
               <div class="project-image-container">
                 <img
                   src="./assets/img/entriprice.png"
@@ -699,7 +700,7 @@
             </article>
 
             <!-- 產業實習平台 -->
-            <article class="project-card" data-delay="120">
+            <article class="project-card" data-delay="160">
               <div class="project-image-container">
                 <img
                   src="./assets/img/internship.png"
@@ -733,7 +734,7 @@
             </article>
 
             <!-- 教室租借網站 -->
-            <article class="project-card" data-delay="120">
+            <article class="project-card" data-delay="200">
               <div class="project-image-container">
                 <img
                   src="./assets/img/rent_classroom.png"
@@ -762,6 +763,39 @@
                 </div>
               </div>
             </article>
+
+            <!-- 輔大FAQ -->
+            <article class="project-card" data-delay="240">
+              <div class="project-image-container">
+                <img
+                  src="./assets/img/faq.png"
+                  alt="輔大FAQ"
+                  class="project-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <header class="project-header">
+                  <h3 class="project-title">輔大FAQ</h3>
+                  <p class="project-meta">2025-07 ~ 至今｜AI模型調整訓練</p>
+                </header>
+                <p class="project-desc">
+                  利用Huggingface開源模型，結合輔仁大學常見問題與校內文件，建立問答機器人。
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">html</span>
+                  <span class="project-tag">huggingface</span>
+                  <span class="project-tag">AI</span>
+                  <span class="project-tag">faq</span>
+                  <span class="project-tag">embeddings</span>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="cta-button tertiary" aria-disabled="true"
+                    >開發中</a
+                  >
+                </div>
+              </div>
+            </article>
           </div>
 
           <h3 class="subsection-title reveal-on-scroll">
@@ -770,35 +804,9 @@
           <div class="app-designs-showcase reveal-on-scroll">
             <!-- 並排的Figma互動設計縮圖 -->
             <div class="app-designs-grid">
-              <!-- eGroup APP 設計 -->
-              <a
-                href="https://www.figma.com/file/egroup-app-design"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="app-design-preview figma-link"
-                data-target="egroup-app"
-                data-delay="80"
-                aria-label="在Figma中打開eGroup APP設計"
-              >
-                <div class="figma-overlay">
-                  <div class="figma-icon"></div>
-                  <span class="figma-text">在Figma中查看互動原型</span>
-                </div>
-                <img
-                  src="./assets/img/app-egroup.svg"
-                  alt="eGroup APP界面預覽"
-                  class="app-design-thumbnail"
-                  loading="lazy"
-                />
-                <div class="app-design-label">
-                  <span>eGroup APP</span>
-                  <span class="interactive-badge">互動原型</span>
-                </div>
-              </a>
-
               <!-- 心理健康平台 APP 設計 -->
               <a
-                href="https://www.figma.com/file/mental-health-app-design"
+                href="https://www.figma.com/proto/faDYubRc5UgHktvRdJtykn/%E5%AB%BB%E5%AB%BB?node-id=0-1&t=48eU1U5NTTdUeDmD-1"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="app-design-preview figma-link"
@@ -818,6 +826,32 @@
                 />
                 <div class="app-design-label">
                   <span>心理健康平台</span>
+                  <span class="interactive-badge">互動原型</span>
+                </div>
+              </a>
+
+              <!-- eGroup APP 設計 -->
+              <a
+                href="https://www.figma.com/proto/Jt8JCRsvvMkw40VzwSJoW0/eGroup?node-id=0-1&t=0d3eLXDXN7YN5JFV-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="app-design-preview figma-link"
+                data-target="egroup-app"
+                data-delay="80"
+                aria-label="在Figma中打開eGroup APP設計"
+              >
+                <div class="figma-overlay">
+                  <div class="figma-icon"></div>
+                  <span class="figma-text">在Figma中查看互動原型</span>
+                </div>
+                <img
+                  src="./assets/img/app-egroup.svg"
+                  alt="eGroup APP界面預覽"
+                  class="app-design-thumbnail"
+                  loading="lazy"
+                />
+                <div class="app-design-label">
+                  <span>eGroup APP</span>
                   <span class="interactive-badge">互動原型</span>
                 </div>
               </a>
@@ -892,9 +926,9 @@
       <!-- Contact -->
       <section id="contact" class="contact section-padding">
         <div class="container">
-          <h2 class="section-title reveal-on-scroll">聯繫我</h2>
+          <h2 class="section-title reveal-on-scroll">Contact Me</h2>
           <div class="contact-content reveal-on-scroll">
-            <div class="contact-info" data-delay="80">
+            <div class="contact-info">
               <p class="contact-text">歡迎來信或至社群聯繫：</p>
               <ul class="contact-list">
                 <li class="contact-item">
@@ -932,57 +966,6 @@
                   >
                 </li>
               </ul>
-            </div>
-            <!-- 如果未配置表單服務，提供 mailto 後援 -->
-            <div class="contact-form-container" data-delay="160">
-              <form
-                id="contact-form"
-                class="contact-form"
-                aria-describedby="form-note"
-              >
-                <p id="form-note" class="form-note">
-                  若無法送出，請直接來信至
-                  <a href="mailto:angela20151210@gmail.com"
-                    >angela20151210@gmail.com</a
-                  >
-                </p>
-                <div class="form-group">
-                  <label for="name">姓名</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="請輸入您的姓名"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="email">電子郵件</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="請輸入您的電子郵件"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="message">訊息</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="5"
-                    placeholder="請輸入您的訊息"
-                  ></textarea>
-                </div>
-                <div class="form-submit">
-                  <button type="submit" class="cta-button primary">
-                    發送訊息
-                  </button>
-                </div>
-                <div class="form-feedback" aria-live="polite"></div>
-              </form>
             </div>
           </div>
         </div>
@@ -1064,8 +1047,11 @@
     <script src="./scripts/language.js" defer></script>
 
     <!-- 功能腳本 -->
+    <script src="./scripts/utils.js" defer></script>
     <script src="./scripts/figma-showcase.js" defer></script>
+    <script src="./scripts/portal.js" defer></script>
     <script src="./scripts/modal.js" defer></script>
+    <script src="./scripts/certificates.js" defer></script>
 
     <!-- 全域遮罩背景 -->
     <div class="modal-overlay"></div>

@@ -2,6 +2,7 @@
  * modal.js
  * 彈出視窗相關功能
  * 包含彈出視窗的開啟、關閉和交互邏輯
+ * 使用Portal模式確保彈出視窗正確顯示在堆疊上下文中
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!modalOverlay) {
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
-    document.body.appendChild(overlay);
+    // 將遮罩層添加到Portal容器而非body
+    window.Portal?.getContainer().appendChild(overlay);
+  }
+
+  // 為所有關閉按鈕添加事件監聽器
+  const closeButtons = document.querySelectorAll('.modal-close');
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      // 找到最近的模態框
+      const modal = this.closest('.modal');
+      if (modal && modal.id) {
+        window.closeModal(modal.id);
+      }
+    });
+  });
+
+  // 點擊遮罩層也關閉模態框
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', function () {
+      // 關閉所有活動的模態框
+      const activeModals = document.querySelectorAll('.modal.active');
+      activeModals.forEach((modal) => {
+        if (modal.id) {
+          window.closeModal(modal.id);
+        }
+      });
+    });
   }
 
   /**
@@ -26,8 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!modal || !overlay) return;
 
-    // 儲存目前滾動位置，避免彈出視窗後滾動位置丟失
+    // 保存模態框原始位置，以便稍後恢復
+    if (!modal.dataset.originalParent) {
+      modal.dataset.originalParent = modal.parentNode
+        ? modal.parentNode.id || 'body'
+        : 'body';
+      modal.dataset.originalPosition = Array.from(
+        modal.parentNode?.children || []
+      ).indexOf(modal);
+    }
+
+    // 紀錄當前滾動位置，便於關閉後恢復
     const scrollPosition = window.pageYOffset;
+
+    // 將模態框移動到Portal容器中
+    if (window.Portal && !window.Portal.isInPortal(modal)) {
+      window.Portal.append(modal);
+    }
+
+    // 確保遮罩層也在Portal容器中
+    if (window.Portal && !window.Portal.isInPortal(overlay)) {
+      window.Portal.append(overlay);
+    }
 
     // 為了動畫順序，先顯示但不設置 active
     modal.style.display = 'block';
@@ -35,34 +82,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 強制重繪
     modal.offsetHeight;
+    overlay.offsetHeight;
 
-    // 設置modal高度相關樣式
-    // 如果模態框內容超過視窗高度，設置滾動
+    // 設置模態框樣式
     const windowHeight = window.innerHeight;
-    const modalHeight = modal.offsetHeight;
+    const modalHeight = modal.scrollHeight;
 
+    // 固定模態框定位，確保置中顯示
+    modal.style.position = 'fixed';
+    modal.style.top = '50%';
+    modal.style.left = '50%';
+    modal.style.transform = 'translate(-50%, -50%) scale(0.95)';
+
+    // 確保模態框高度合理，可滾動
     if (modalHeight > windowHeight * 0.9) {
-      modal.style.height = windowHeight * 0.9 + 'px';
-      modal.style.overflowY = 'auto';
-    } else {
-      modal.style.height = 'auto';
-      modal.style.overflowY = 'visible';
+      modal.style.maxHeight = windowHeight * 0.9 + 'px';
     }
+
+    // 確保正確的層級關係
+    modal.style.zIndex = '1050';
+    overlay.style.zIndex = '1000';
 
     // 然後添加 active 類觸發動畫
     modal.classList.add('active');
     overlay.classList.add('active');
 
+    // 觸發動畫
+    modal.style.transform = 'translate(-50%, -50%) scale(1)';
+    modal.style.opacity = '1';
+    overlay.style.opacity = '1';
+
     // 防止頁面滾動
     document.body.style.overflow = 'hidden';
-    // 為了防止位移，添加右側內邊距替代滾動條寬度
-    document.body.style.paddingRight = getScrollbarWidth() + 'px';
-    // 確保彈窗內容可滾動
-    modal.style.overflowY = 'auto';
+    document.body.style.paddingRight =
+      (typeof getScrollbarWidth === 'function' ? getScrollbarWidth() : 0) +
+      'px';
 
-    // 確保模態框置頂並置中
+    // 確保模態框內容可滾動，遮罩不可滾動
+    modal.style.overflowY = 'auto';
+    overlay.style.overflowY = 'hidden';
+
+    // 重置模態框滾動位置
     setTimeout(() => {
-      // 重置modal的滾動位置到頂部
       modal.scrollTop = 0;
     }, 10);
   };
@@ -77,24 +138,74 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalId) {
       const modal = document.getElementById(modalId);
       if (modal) {
+        // 淡出動畫
         modal.classList.remove('active');
+        modal.style.opacity = '0';
+        modal.style.transform = 'translate(-50%, -50%) scale(0.95)';
 
         // 重置彈窗內部滾動位置以便下次打開
         modal.scrollTop = 0;
-
-        // 重置modal樣式
-        modal.style.height = '';
 
         // 檢查是否還有其他活動的彈出視窗
         const activeModals = document.querySelectorAll('.modal.active');
         if (activeModals.length === 0 && overlay) {
           overlay.classList.remove('active');
+          overlay.style.opacity = '0';
 
           // 延遲移除顯示，等待淡出動畫完成
           setTimeout(() => {
+            // 重置模態框樣式
             modal.style.display = 'none';
-            if (activeModals.length === 0) {
-              overlay.style.display = 'none';
+            modal.style.maxHeight = '';
+            modal.style.transform = '';
+            modal.style.position = '';
+
+            // 將模態框移回原始位置
+            if (window.Portal && modal.dataset.originalParent) {
+              // 從Portal容器中移除
+              window.Portal.remove(modal);
+
+              // 如果有原始父元素且不是body，則恢復到原位
+              const originalParent =
+                modal.dataset.originalParent !== 'body'
+                  ? document.getElementById(modal.dataset.originalParent)
+                  : document.body;
+
+              if (originalParent) {
+                const originalPosition = parseInt(
+                  modal.dataset.originalPosition || '0',
+                  10
+                );
+
+                // 將元素插入到原來的位置
+                if (
+                  originalPosition >= 0 &&
+                  originalPosition < originalParent.children.length
+                ) {
+                  originalParent.insertBefore(
+                    modal,
+                    originalParent.children[originalPosition]
+                  );
+                } else {
+                  originalParent.appendChild(modal);
+                }
+              }
+            }
+
+            // 只有當沒有其他模態框開啟時才重置遮罩和頁面滾動
+            const currentActiveModals =
+              document.querySelectorAll('.modal.active');
+            if (currentActiveModals.length === 0) {
+              if (overlay) {
+                overlay.style.display = 'none';
+
+                // 將遮罩層也移回body
+                if (window.Portal) {
+                  window.Portal.remove(overlay);
+                  document.body.appendChild(overlay);
+                }
+              }
+
               // 恢復頁面滾動
               document.body.style.overflow = '';
               document.body.style.paddingRight = '0';
@@ -111,6 +222,38 @@ document.addEventListener('DOMContentLoaded', () => {
         // 延遲移除顯示
         setTimeout(() => {
           modal.style.display = 'none';
+
+          // 將模態框移回原始位置
+          if (window.Portal && modal.dataset.originalParent) {
+            // 從Portal容器中移除
+            window.Portal.remove(modal);
+
+            // 如果有原始父元素且不是body，則恢復到原位
+            const originalParent =
+              modal.dataset.originalParent !== 'body'
+                ? document.getElementById(modal.dataset.originalParent)
+                : document.body;
+
+            if (originalParent) {
+              const originalPosition = parseInt(
+                modal.dataset.originalPosition || '0',
+                10
+              );
+
+              // 將元素插入到原來的位置
+              if (
+                originalPosition >= 0 &&
+                originalPosition < originalParent.children.length
+              ) {
+                originalParent.insertBefore(
+                  modal,
+                  originalParent.children[originalPosition]
+                );
+              } else {
+                originalParent.appendChild(modal);
+              }
+            }
+          }
         }, 300);
       });
 
@@ -119,6 +262,13 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('active');
         setTimeout(() => {
           overlay.style.display = 'none';
+
+          // 將遮罩層也移回body
+          if (window.Portal) {
+            window.Portal.remove(overlay);
+            document.body.appendChild(overlay);
+          }
+
           // 恢復頁面滾動
           document.body.style.overflow = '';
           document.body.style.paddingRight = '0';
@@ -192,6 +342,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * 先關閉所有已開啟的模態框，再開啟指定的模態框
+ * 這可以避免多個模態框堆疊的問題
+ * @param {string} modalId - 要開啟的模態框ID
+ */
+window.openModalSafely = function (modalId) {
+  // 先關閉所有已開啟的模態框
+  const activeModals = document.querySelectorAll('.modal.active');
+  if (activeModals.length > 0) {
+    // 關閉所有活動的模態框
+    window.closeModal();
+
+    // 短暫延遲後再開啟新的模態框，讓關閉動畫有時間執行
+    setTimeout(() => {
+      window.openModal(modalId);
+    }, 310); // 略大於關閉動畫時間(300ms)
+  } else {
+    // 如果沒有已開啟的模態框，直接開啟
+    window.openModal(modalId);
+  }
+};
+
+/**
  * 證照卡片特定的初始化
  */
 document.addEventListener('DOMContentLoaded', () => {
@@ -205,8 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const certId = card.dataset.certId;
       if (!certId) return;
 
-      // 打開對應的彈出視窗
-      window.openModal(`modal-${certId}`);
+      // 使用安全的開啟函數，確保先關閉其他模態框
+      window.openModalSafely(`modal-${certId}`);
 
       // 獲取對應modal元素並確保其可見
       const modal = document.getElementById(`modal-${certId}`);

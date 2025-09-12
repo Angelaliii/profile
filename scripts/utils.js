@@ -19,6 +19,30 @@ function debounce(func, wait = 100) {
 }
 
 /**
+ * 獲取滾動條的寬度
+ * @returns {number} 滾動條寬度（像素）
+ */
+function getScrollbarWidth() {
+  // 創建一個div元素，但不添加到DOM中
+  const outer = document.createElement('div');
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll';
+  document.body.appendChild(outer);
+
+  // 創建內部div
+  const inner = document.createElement('div');
+  outer.appendChild(inner);
+
+  // 計算滾動條的寬度
+  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+  // 移除測試元素
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+}
+
+/**
  * 節流函數 - 限制函數在一定時間內只能執行一次
  * @param {Function} func - 要執行的函數
  * @param {number} limit - 時間限制（毫秒）
@@ -116,7 +140,6 @@ function setupExternalLinks() {
     if (!link.hasAttribute('target')) {
       link.setAttribute('target', '_blank');
     }
-
   });
 }
 
