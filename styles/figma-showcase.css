@@ -27,6 +27,8 @@
   box-shadow: var(--shadow-sm);
   position: relative;
   padding-top: 200%; /* 高寬比約 2:1 模擬手機螢幕 */
+  display: block;
+  text-decoration: none;
 }
 
 .app-design-preview:hover {
@@ -38,6 +40,52 @@
 .app-design-preview.active {
   border-color: var(--color-brand);
   box-shadow: 0 0 0 3px var(--color-brand-lighter);
+}
+
+/* Figma 連結樣式 */
+.figma-link {
+  position: relative;
+}
+
+/* 使用特定的選擇器避免與已有樣式衝突 */
+.app-design-preview .figma-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.figma-link:hover .figma-overlay {
+  opacity: 1;
+}
+
+.figma-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 57'%3E%3Cpath fill='%23f24e1e' d='M19 28.5c0-5.247 4.253-9.5 9.5-9.5s9.5 4.253 9.5 9.5-4.253 9.5-9.5 9.5-9.5-4.253-9.5-9.5z'/%3E%3Cpath fill='%23ff7262' d='M0 47.5c0-5.247 4.253-9.5 9.5-9.5h9.5v9.5c0 5.247-4.253 9.5-9.5 9.5S0 52.747 0 47.5z'/%3E%3Cpath fill='%23a259ff' d='M19 0v19h9.5c5.247 0 9.5-4.253 9.5-9.5S33.747 0 28.5 0H19z'/%3E%3Cpath fill='%231abcfe' d='M0 9.5C0 4.253 4.253 0 9.5 0H19v19H9.5C4.253 19 0 14.747 0 9.5z'/%3E%3Cpath fill='%230acf83' d='M0 28.5c0-5.247 4.253-9.5 9.5-9.5H19v19H9.5c-5.247 0-9.5-4.253-9.5-9.5z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+.figma-text {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .app-design-thumbnail {
@@ -60,6 +108,20 @@
   color: white;
   font-size: var(--font-size-sm);
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.interactive-badge {
+  background-color: var(--color-brand);
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-left: 5px;
+  display: inline-block;
 }
 
 /* Figma 嵌入區域 */
@@ -113,6 +175,42 @@
   width: 100%;
   height: 100%;
   min-height: 450px;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-surface-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.figma-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-background);
+}
+
+.figma-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.figma-overlay:hover {
+  opacity: 1;
 }
 
 /* 初始提示區域 */

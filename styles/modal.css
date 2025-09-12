@@ -1,0 +1,187 @@
+/**
+ * modal.css
+ * 通用彈出視窗樣式
+ * 包含彈出視窗、遮罩背景和相關動畫
+ */
+
+/* 彈出視窗遮罩 */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  z-index: var(--z-overlay);
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+}
+
+/* 通用彈出視窗樣式 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: calc(var(--z-overlay) + 10); /* 提高z-index確保顯示在遮罩上方 */
+  opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  display: block;
+}
+
+.modal-content {
+  padding: var(--space-6);
+  position: relative;
+  max-height: calc(90vh - 40px); /* 確保內容有足夠空間但不超過視窗高度 */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-4);
+}
+
+.modal-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-2);
+}
+
+.modal-body {
+  margin-bottom: var(--space-4);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+/* 證書彈出視窗特定樣式 */
+/* .cert-modal 類會繼承通用彈出視窗樣式 */
+.cert-modal {
+  max-width: 700px; /* 控制證書模態框的最大寬度 */
+  width: 90%;
+}
+
+.cert-modal-badge {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-modal-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-2);
+}
+
+.cert-modal-details {
+  margin-top: var(--space-4);
+}
+
+.cert-modal-details h5 {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.cert-modal-details ul {
+  padding-left: var(--space-4);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.cert-modal-details li {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.cert-modal-details p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+/* 響應式調整 */
+@media (max-width: 767px) {
+  .modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modal-content {
+    padding: var(--space-4);
+  }
+
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cert-modal-badge {
+    margin: 0 auto var(--space-3);
+  }
+}

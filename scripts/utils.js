@@ -117,18 +117,6 @@ function setupExternalLinks() {
       link.setAttribute('target', '_blank');
     }
 
-    // 視覺提示外部連結
-    if (
-      !link.classList.contains('no-external-icon') &&
-      !link.querySelector('.external-icon')
-    ) {
-      const icon = document.createElement('span');
-      icon.classList.add('external-icon');
-      icon.setAttribute('aria-hidden', 'true');
-      icon.innerHTML =
-        '<svg width="12" height="12" viewBox="0 0 12 12"><path fill="currentColor" d="M6 1h5v5h-1V2.707L4.354 8.354l-.708-.708L9.293 2H6V1zm-5 1h4v1H2v7h7V7h1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2z"/></svg>';
-      link.appendChild(icon);
-    }
   });
 }
 
