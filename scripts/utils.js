@@ -1,13 +1,6 @@
-/**
- * utils.js
- * 網站通用工具函數
- */
+// 網站通用工具函數
 
-/**
- * 防抖函數 - 限制函數在短時間內的重複觸發
- * @param {Function} func - 要執行的函數
- * @param {number} wait - 等待時間（毫秒）
- */
+// 防抖函數
 function debounce(func, wait = 100) {
   let timeout;
   return function (...args) {
@@ -18,35 +11,23 @@ function debounce(func, wait = 100) {
   };
 }
 
-/**
- * 獲取滾動條的寬度
- * @returns {number} 滾動條寬度（像素）
- */
+// 獲取滾動條寬度
 function getScrollbarWidth() {
-  // 創建一個div元素，但不添加到DOM中
   const outer = document.createElement('div');
   outer.style.visibility = 'hidden';
   outer.style.overflow = 'scroll';
   document.body.appendChild(outer);
 
-  // 創建內部div
   const inner = document.createElement('div');
   outer.appendChild(inner);
 
-  // 計算滾動條的寬度
   const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-
-  // 移除測試元素
   outer.parentNode.removeChild(outer);
 
   return scrollbarWidth;
 }
 
-/**
- * 節流函數 - 限制函數在一定時間內只能執行一次
- * @param {Function} func - 要執行的函數
- * @param {number} limit - 時間限制（毫秒）
- */
+// 節流函數
 function throttle(func, limit = 300) {
   let inThrottle;
   return function (...args) {
@@ -58,18 +39,12 @@ function throttle(func, limit = 300) {
   };
 }
 
-/**
- * 獲取當前瀏覽器語言
- * @returns {string} 語言代碼（例如 'zh-TW' 或 'en'）
- */
+// 獲取當前瀏覽器語言
 function getBrowserLanguage() {
   return navigator.language || navigator.userLanguage || 'zh-TW';
 }
 
-/**
- * 檢測設備類型
- * @returns {string} 'mobile', 'tablet' 或 'desktop'
- */
+// 檢測設備類型
 function getDeviceType() {
   const width = window.innerWidth;
   if (width < 768) {
@@ -81,10 +56,7 @@ function getDeviceType() {
   }
 }
 
-/**
- * 檢測是否為觸控設備
- * @returns {boolean} 是否為觸控設備
- */
+// 檢測是否為觸控設備
 function isTouchDevice() {
   return (
     'ontouchstart' in window ||
@@ -93,10 +65,7 @@ function isTouchDevice() {
   );
 }
 
-/**
- * 獲取頁面滾動百分比
- * @returns {number} 滾動百分比 (0-100)
- */
+// 獲取頁面滾動百分比
 function getScrollPercentage() {
   const scrollTop = window.scrollY;
   const scrollHeight =
@@ -104,11 +73,7 @@ function getScrollPercentage() {
   return (scrollTop / scrollHeight) * 100;
 }
 
-/**
- * 平滑滾動到指定元素
- * @param {string|Element} target - 目標元素或選擇器
- * @param {number} offset - 頂部偏移量（像素）
- */
+// 平滑滾動到指定元素
 function scrollToElement(target, offset = 0) {
   const element =
     typeof target === 'string' ? document.querySelector(target) : target;
@@ -124,9 +89,7 @@ function scrollToElement(target, offset = 0) {
   });
 }
 
-/**
- * 處理外部連結，添加安全屬性
- */
+// 處理外部連結，添加安全屬性
 function setupExternalLinks() {
   const externalLinks = document.querySelectorAll(
     'a[href^="http"]:not([href*="' + window.location.hostname + '"])'
@@ -143,12 +106,7 @@ function setupExternalLinks() {
   });
 }
 
-/**
- * 載入腳本
- * @param {string} src - 腳本來源
- * @param {boolean} async - 是否異步載入
- * @returns {Promise} 腳本載入 Promise
- */
+// 載入腳本
 function loadScript(src, async = true) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -160,22 +118,14 @@ function loadScript(src, async = true) {
   });
 }
 
-/**
- * 生成隨機 ID
- * @param {string} prefix - ID 前綴
- * @returns {string} 隨機 ID
- */
+// 生成隨機 ID
 function generateId(prefix = 'id') {
   return `${prefix}-${Math.random().toString(36).substring(2, 9)}`;
 }
 
-/**
- * 初始化圖片延遲載入
- */
+// 初始化圖片延遲載入
 function initLazyLoading() {
-  // 檢查瀏覽器是否支援原生延遲載入
   if ('loading' in HTMLImageElement.prototype) {
-    // 使用原生延遲載入
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     lazyImages.forEach((img) => {
       if (img.dataset.src) {
@@ -184,7 +134,6 @@ function initLazyLoading() {
       }
     });
   } else {
-    // 回退到 Intersection Observer
     const lazyImages = document.querySelectorAll('img.lazy, [data-src]');
     if (!lazyImages.length) return;
 
@@ -210,7 +159,6 @@ function initLazyLoading() {
   }
 }
 
-// 在 DOMContentLoaded 時初始化通用函數
 document.addEventListener('DOMContentLoaded', () => {
   setupExternalLinks();
   initLazyLoading();
